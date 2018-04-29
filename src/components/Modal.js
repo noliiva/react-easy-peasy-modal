@@ -30,7 +30,7 @@ const Modal = ({
 Modal.propTypes = {
   renderOverlay: PropTypes.func,
   autoClose: PropTypes.bool,
-  children: PropTypes.node,
+  children: PropTypes.func,
 };
 
 export default Modal;

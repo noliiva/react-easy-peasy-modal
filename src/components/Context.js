@@ -15,8 +15,10 @@ export class Provider extends React.Component {
     };
   }
 
-  componentDidUpdate() {
-    this.setState({ visible: this.props.visible });
+  componentDidUpdate(prevProps) {
+    if (prevProps.visible !== this.props.visible) {
+      this.setState({ visible: this.props.visible });
+    }
   }
 
   open = () => this.setState({ visible: true });

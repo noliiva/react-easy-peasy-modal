@@ -4,4 +4,8 @@ import {
 } from './components/Context';
 import Modal from './components/Modal';
 
-export default { Modal, ModalProvider, ModalConsumer };
+export {
+  ModalProvider,
+  ModalConsumer,
+  Modal,
+};
