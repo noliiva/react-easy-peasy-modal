@@ -1,4 +1,4 @@
-# React easy-peasy modal ![alt text](https://img.shields.io/badge/state-WIP-red.svg)
+# React easy-peasy modal ![alt text](https://img.shields.io/badge/state-functionnal-yellow.svg)
 
 Another react modal, customizable, based on react portal and context api.
 
