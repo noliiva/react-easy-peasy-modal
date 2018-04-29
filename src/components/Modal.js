@@ -9,7 +9,6 @@ const Modal = ({
   renderOverlay = () => null,
   autoClose,
   children,
-  ...otherProps
 }) => (
   <Consumer>
     {({ visible, close }) => visible && (
@@ -17,8 +16,8 @@ const Modal = ({
         {
           renderOverlay({
             children: (
-              <Container autoClose={autoClose} >
-                {children({ close, ...otherProps })}
+              <Container autoClose={autoClose} close={close} >
+                {children({ close })}
               </Container>
             ),
         })}

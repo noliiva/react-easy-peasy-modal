@@ -25,9 +25,10 @@ class Container extends React.Component {
     const { children } = this.props;
 
     return (
-      <div ref={(node) => { this.container = node; }} >
-        {children}
-      </div>
+      <children.type
+        ref={(node) => { this.container = node; }}
+        {...children.props}
+      />
     );
   }
 }
