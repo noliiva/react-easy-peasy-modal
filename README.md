@@ -35,17 +35,16 @@ const CloseButton = styled.button`
 const MyComponent = () => (
   <ModalProvider>
     <ModalConsumer>
-      {({ open }) => <button onClick={open} >Oh my modal !</button>}
+      {({ open }) => <button onClick={open} >Show my modal !</button>}
     </ModalConsumer>
     
     <Modal autoClose renderOverlay={Overlay} >
-      <ModalContent>
-        {({ close }) => (
-        <div>
+      {({ close }) => (
+        <ModalContent>
           <CloseButton onClick={close} >X</CloseButton>
-          Pouet !
-        </div>
-      </ModalContent>
+          Oh my modal !
+        </ModalContent>
+      )}
     </Modal>
   </ModalProvider>
 );
