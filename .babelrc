@@ -1,4 +1,3 @@
 {
-  "presets": ["env", "stage-0", "react"],
-  "plugins": ["inline-react-svg"]
+  "presets": ["env", "stage-0", "react"]
 }
