@@ -8,6 +8,10 @@ const Context = React.createContext({});
 export const { Consumer } = Context;
 
 export class Provider extends React.Component {
+  static getDerivedStateFromProps(nextProps, prevState) {
+    return { ...prevState, visible: nextProps.visible };
+  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -15,10 +19,6 @@ export class Provider extends React.Component {
       open: this.open,
       close: this.close,
     };
-  }
-
-  getDerivedStateFromProps(nextProps, prevState) {
-    return { ...prevState, visible: nextProps.visible };
   }
 
   open = () => { this.setState({ visible: true }); };

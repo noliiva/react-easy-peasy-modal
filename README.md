@@ -2,8 +2,12 @@
 
 Just another react modal based on portal, context api and render props.
 
-Need react >= 16.3
 
+## Requirements
+React ^16.3.2
+
+
+## Example
 ```
 import react from 'react';
 import styled from 'styled-components';
@@ -34,13 +38,15 @@ const CloseButton = styled.button`
   right: 1em;
 `;
 
+const renderOverlay = ({ children }) => <Overlay>{children}</Overlay>;
+
 const MyComponent = () => (
   <ModalProvider>
     <ModalConsumer>
       {({ open }) => <button onClick={open} >Show my modal !</button>}
     </ModalConsumer>
     
-    <Modal autoClose renderOverlay={Overlay} >
+    <Modal autoClose renderOverlay={renderOverlay} >
       {({ close }) => (
         <ModalContent>
           <CloseButton onClick={close} >X</CloseButton>

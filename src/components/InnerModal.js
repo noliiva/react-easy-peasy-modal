@@ -3,11 +3,6 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
 class InnerModal extends React.Component {
-  constructor(props) {
-    super(props);
-    this.containerRef = React.createRef();
-  }
-
   componentDidMount() {
     document.body.addEventListener('click', this.onClickOutside);
   }
@@ -19,8 +14,8 @@ class InnerModal extends React.Component {
   onClickOutside = (event) => {
     const { autoClose } = this.props;
     if (autoClose) {
-      const elt = ReactDOM.findDOMNode(this.containerRef);
-      if (elt && !elt.contains(event.target)) {
+      const container = ReactDOM.findDOMNode(this.containerRef);
+      if (container && !container.contains(event.target)) {
         this.props.close();
       }
     }
@@ -31,7 +26,7 @@ class InnerModal extends React.Component {
 
     return (
       <children.type
-        ref={this.containerRef}
+        ref={(node) => { this.containerRef = node; }}
         {...children.props}
       />
     );
