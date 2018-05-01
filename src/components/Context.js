@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unused-state */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -15,14 +17,12 @@ export class Provider extends React.Component {
     };
   }
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.visible !== this.props.visible) {
-      this.setState({ visible: this.props.visible });
-    }
+  getDerivedStateFromProps(nextProps, prevState) {
+    return { ...prevState, visible: nextProps.visible };
   }
 
-  open = () => this.setState({ visible: true });
-  close = () => this.setState({ visible: false });
+  open = () => { this.setState({ visible: true }); };
+  close = () => { this.setState({ visible: false }); };
 
   render() {
     return (
@@ -37,3 +37,5 @@ Provider.propTypes = {
   visible: PropTypes.bool,
   children: PropTypes.node,
 };
+
+/* eslint-enable react/no-unused-state */

@@ -1,28 +1,32 @@
 {
-    "extends": [
-      "airbnb",
-      "plugin:import/warnings",
-      "plugin:import/errors"
-    ],
-    "env": {
-      "browser": true,
-      "commonjs": true,
-      "node": true,
-      "es6": true,
-      "jest": true
-    },
-    "parser": "babel-eslint",
-    "parserOptions": {
-      "ecmaVersion": 6
-    },
-    "rules": {
-      "react/forbid-prop-types": 0,
-      "react/jsx-first-prop-new-line": [2, "multiline"],
-      "react/jsx-filename-extension": 0,
-      "react/jsx-no-target-blank": 0,
-      "react/no-find-dom-node": 0,
-      "react/require-extension": 0,
-      "react/require-default-props": 0,
-      "react/self-closing-comp": 0
-    }
+  "extends": [
+    "airbnb",
+    "plugin:import/warnings",
+    "plugin:import/errors"
+  ],
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
+  "rules": {
+    "class-methods-use-this": [0, { "exceptMethods": ["getDerivedStateFromProps"] }],
+    "import/extensions": [0, "ignorePackages", {"js": "never"}],
+    "import/no-unresolved": [0, { "ignore": ["^react$"] }],
+    "no-console": 1,
+    "react/forbid-prop-types": 0,
+    "react/jsx-first-prop-new-line": [2, "multiline"],
+    "react/jsx-filename-extension": 0,
+    "react/jsx-no-target-blank": 0,
+    "react/no-find-dom-node": 0,
+    "react/require-extension": 0,
+    "react/require-default-props": 0,
+    "react/self-closing-comp": 0
+  }
 }

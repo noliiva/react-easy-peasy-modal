@@ -1,6 +1,8 @@
-# React easy-peasy modal ![alt text](https://img.shields.io/badge/state-functionnal-yellow.svg)
+# React easy-peasy modal ![alt text](https://img.shields.io/badge/state-not_tested-yellow.svg)
 
-Another react modal, customizable, based on react portal and context api.
+Just another react modal based on portal, context api and render props.
+
+Need react >= 16.3
 
 ```
 import react from 'react';

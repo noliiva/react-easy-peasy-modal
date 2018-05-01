@@ -3,23 +3,23 @@ import PropTypes from 'prop-types';
 
 import { Consumer } from './Context';
 import Portal from './Portal';
-import Container from './Container';
+import InnerModal from './InnerModal';
 
 const Modal = ({
-  renderOverlay = () => null,
+  renderOverlay = React.Framgnent,
   autoClose,
   children,
+  ...otherProps
 }) => (
   <Consumer>
     {({ visible, close }) => visible && (
       <Portal>
-        {
-          renderOverlay({
-            children: (
-              <Container autoClose={autoClose} close={close} >
-                {children({ close })}
-              </Container>
-            ),
+        {renderOverlay({
+          children: (
+            <InnerModal autoClose={autoClose} close={close} >
+              {children({ close, ...otherProps })}
+            </InnerModal>
+          ),
         })}
       </Portal>
     )}

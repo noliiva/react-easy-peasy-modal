@@ -2,7 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
-class Container extends React.Component {
+class InnerModal extends React.Component {
+  constructor(props) {
+    super(props);
+    this.containerRef = React.createRef();
+  }
+
   componentDidMount() {
     document.body.addEventListener('click', this.onClickOutside);
   }
@@ -14,7 +19,7 @@ class Container extends React.Component {
   onClickOutside = (event) => {
     const { autoClose } = this.props;
     if (autoClose) {
-      const elt = ReactDOM.findDOMNode(this.container);
+      const elt = ReactDOM.findDOMNode(this.containerRef);
       if (elt && !elt.contains(event.target)) {
         this.props.close();
       }
@@ -26,17 +31,17 @@ class Container extends React.Component {
 
     return (
       <children.type
-        ref={(node) => { this.container = node; }}
+        ref={this.containerRef}
         {...children.props}
       />
     );
   }
 }
 
-Container.propTypes = {
+InnerModal.propTypes = {
   close: PropTypes.func,
   autoClose: PropTypes.bool,
   children: PropTypes.node,
 };
 
-export default Container;
+export default InnerModal;
