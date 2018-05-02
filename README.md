@@ -4,8 +4,8 @@ Just another react modal based on portal, context api and render props.
 
 
 ## Requirements
-react ^16.3.2
-react-dom" ^16.3.2
+* react ^16.3.2
+* react-dom ^16.3.2
 
 
 ## Example
