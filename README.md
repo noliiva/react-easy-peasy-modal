@@ -7,6 +7,14 @@ Just another react modal based on portal, context api and render props.
 * react ^16.3.2
 * react-dom ^16.3.2
 
+## Installation
+```
+npm install react-easy-peasy-modal
+```
+With Yarn :
+```
+yarn add react-easy-peasy-modal
+```
 
 ## Example
 ```
