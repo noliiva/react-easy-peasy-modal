@@ -6,7 +6,7 @@ import Portal from './Portal';
 import InnerModal from './InnerModal';
 
 const Modal = ({
-  renderOverlay = React.Framgnent,
+  renderOverlay = React.Fragment,
   autoClose,
   children,
   ...otherProps
